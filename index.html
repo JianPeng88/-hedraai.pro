@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hedra AI - AI-powered video creation tool that generates talking, singing character videos from text and images." data-i18n-attrs="content:meta.description">
+    <meta name="keywords" content="AI video, video creation, character animation, Hedra AI, artificial intelligence video" data-i18n-attrs="content:meta.keywords">
+    <title>Hedra AI - Create Talking, Singing Character Videos</title>
+
+    <!-- Hreflang tags for SEO -->
+    <link rel="alternate" hreflang="en" href="index.html?lang=en" />
+    <link rel="alternate" hreflang="zh" href="index.html?lang=zh" />
+    <link rel="alternate" hreflang="ja" href="index.html?lang=ja" />
+    <link rel="alternate" hreflang="ru" href="index.html?lang=ru" />
+    <link rel="alternate" hreflang="de" href="index.html?lang=de" />
+    <link rel="alternate" hreflang="x-default" href="index.html" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo" data-i18n-key="nav.logo">Hedra AI</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" data-i18n-attrs="aria-label:nav.toggleAriaLabel">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li class="nav-item"><a href="#" class="nav-link" data-i18n-key="nav.home">Home</a></li>
+                <li class="nav-item"><a href="#features-section" class="nav-link" data-i18n-key="nav.product">Product</a></li>
+                <li class="nav-item"><a href="#pricing-section" class="nav-link" data-i18n-key="nav.pricing">Pricing</a></li>
+                <li class="nav-item"><a href="#blog-section" class="nav-link" data-i18n-key="nav.blog">Blog</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="#login" class="nav-button login-button" data-i18n-key="nav.login">Login</a>
+                <a href="#signup" class="nav-button signup-button" data-i18n-key="nav.start">Start Using</a>
+            </div>
+            <!-- Language selector container -->
+            <div class="language-selector-container" id="languageSelectorContainer">
+                <button 
+                    class="language-selector-button" 
+                    id="languageSelectorButton"
+                    aria-expanded="false"
+                    aria-haspopup="listbox"
+                    aria-label="Select language"
+                    data-i18n-attrs="aria-label:nav.languageSelectorAriaLabel"
+                >
+                    <span id="selectedLanguageName">English</span> <!-- Default display English -->
+                    <span class="dropdown-arrow">▼</span>
+                </button>
+                <ul 
+                    class="language-dropdown" 
+                    id="languageDropdown"
+                    role="listbox"
+                    aria-hidden="true" 
+                >
+                    <!-- Language options will be dynamically populated by JS -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+      <h1 class="main-title" data-i18n-key="hero.mainTitle">Create Talking, Singing Character Videos</h1>
+      <div class="brand-container">
+        <h2 class="brand-name" data-i18n-key="hero.brandName">Hedra AI</h2>
+        <div class="underline"></div>
+      </div>
+      <div class="tag" data-i18n-key="hero.tag">AI-powered video editing tools</div>
+      
+      <p class="description" data-i18n-key="hero.description">
+        Hedra AI revolutionizes video creation, allowing anyone to generate expressive, talking and singing characters from simple text and images. It's a powerful, user-friendly tool that brings imaginative stories to life, enabling creators to produce engaging videos in minutes without any technical expertise.
+      </p>
+      
+      <div class="cta-container">
+        <a href="#try" class="try-button">
+          Try Hedra AI
+          <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="video-container">
+        <iframe 
+          width="100%" 
+          height="450" 
+          src="https://www.youtube.com/embed/ypH07KBMxM4" 
+          title="Hedra AI Product Demo" 
+          data-i18n-attrs="title:hero.videoTitle"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </header>
+
+    <section id="features-section" class="page-section">
+        <h2 class="section-title" data-i18n-key="features.title">Core Features</h2>
+        <p class="section-subtitle" data-i18n-key="features.subtitle">Discover how Hedra AI revolutionizes your video creation workflow and unlocks limitless creative potential.</p>
+        <div class="features-grid">
+            <!-- Feature 1: Intelligent Story Generation -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-magic"></i></div>
+                <h3 class="feature-title" data-i18n-key="features.card1.title">Intelligent Story Generation</h3>
+                <p class="feature-description" data-i18n-key="features.card1.description">Generate professional-quality video content in minutes without extensive technical knowledge, making narrative creation accessible to everyone. Integrate cutting-edge AI video editing technology to turn ideas into captivating stories with a single click.</p>
+            </div>
+            <!-- Feature 2: Personalized Voice Customization -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-volume-up"></i></div>
+                <h3 class="feature-title" data-i18n-key="features.card2.title">Personalized Voice Customization</h3>
+                <p class="feature-description" data-i18n-key="features.card2.description">Choose from a diverse sound library to find the voice that best suits your character's traits, ensuring each creation has a unique vocal identity. Offers voice options in multiple languages, accents, and emotional tones to bring characters to life.</p>
+            </div>
+            <!-- Feature 3: AI Smart Character Generation -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-user-astronaut"></i></div>
+                <h3 class="feature-title" data-i18n-key="features.card3.title">AI Smart Character Generation</h3>
+                <p class="feature-description" data-i18n-key="features.card3.description">Utilize cutting-edge technology to transform static images into lifelike virtual characters. Expressive characters can talk, sing, and even narrate complete stories. Supports custom character expressions and movements for an immersive audiovisual experience.</p>
+            </div>
+            <!-- Feature 4: Full Format Media Support -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="far fa-file-image"></i></div>
+                <h3 class="feature-title" data-i18n-key="features.card4.title">Full Format Media Support</h3>
+                <p class="feature-description" data-i18n-key="features.card4.description">Easily upload and process major image formats (.jpeg, .png, .webp, etc.) to quickly create personalized character visuals, offering a wide range of design possibilities. Compatible with various media sources for seamless integration into your creative workflow.</p>
+            </div>
+            <!-- Feature 5: Convenient Sharing Mechanism -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-share-square"></i></div>
+                <h3 class="feature-title" data-i18n-key="features.card5.title">Convenient Sharing Mechanism</h3>
+                <p class="feature-description" data-i18n-key="features.card5.description">Download finished videos with one click or share them directly from the platform to social media, simplifying video distribution and expanding your creative reach. Supports multiple export formats and resolutions to meet different platform requirements.</p>
+            </div>
+            <!-- Feature 6: Text-to-Video Technology -->
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-file-alt"></i></div>
+                <h3 class="feature-title" data-i18n-key="features.card6.title">Text-to-Video Technology</h3>
+                <p class="feature-description" data-i18n-key="features.card6.description">Breakthrough technology converts up to 300 words of text into a 60-second engaging video, bringing your written content to life with vivid character animation. Intelligent scene generation and transition effects enhance video narrative fluency.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works-section" class="page-section">
+        <h2 class="section-title" data-i18n-key="howitworks.title">Create Your Exclusive Video in a Few Simple Steps</h2>
+        <p class="section-subtitle" data-i18n-key="howitworks.subtitle">Learn how Hedra AI quickly turns your creative ideas into reality.</p>
+        <div class="workflow-steps-container">
+            <!-- Step 1: Input Idea -->
+            <div class="workflow-step">
+                <div class="step-number-container">
+                    <span class="step-number">1</span>
+                    <div class="step-icon"><i class="fas fa-lightbulb"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n-key="howitworks.step1.title">Input Idea</h3>
+                    <p class="step-description" data-i18n-key="howitworks.step1.description">Provide your text script, upload image assets, or choose from our rich template library to start your creative journey.</p>
+                </div>
+            </div>
+
+            <!-- Step 2: AI Processing & Customization -->
+            <div class="workflow-step">
+                <div class="step-number-container">
+                    <span class="step-number">2</span>
+                    <div class="step-icon"><i class="fas fa-cogs"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n-key="howitworks.step2.title">AI Processing & Customization</h3>
+                    <p class="step-description" data-i18n-key="howitworks.step2.description">Our powerful AI will intelligently process your input. You can freely adjust character appearance, voice tone, video style, and other detailed settings.</p>
+                </div>
+            </div>
+
+            <!-- Step 3: Preview & Generate -->
+            <div class="workflow-step">
+                <div class="step-number-container">
+                    <span class="step-number">3</span>
+                    <div class="step-icon"><i class="fas fa-video"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n-key="howitworks.step3.title">Preview & Generate</h3>
+                    <p class="step-description" data-i18n-key="howitworks.step3.description">Preview your work in real-time to ensure every detail meets your expectations. Once satisfied, quickly generate a high-definition video with one click.</p>
+                </div>
+            </div>
+
+            <!-- Step 4: Download & Share -->
+            <div class="workflow-step">
+                <div class="step-number-container">
+                    <span class="step-number">4</span>
+                    <div class="step-icon"><i class="fas fa-share-alt"></i></div>
+                </div>
+                <div class="step-content">
+                    <h3 class="step-title" data-i18n-key="howitworks.step4.title">Download & Share</h3>
+                    <p class="step-description" data-i18n-key="howitworks.step4.description">Easily download your created video or share it directly to major social media platforms to let more people see your brilliant ideas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq-section" class="page-section">
+        <h2 class="section-title" data-i18n-key="faq.title">Frequently Asked Questions</h2>
+        <p class="section-subtitle" data-i18n-key="faq.subtitle">Find answers to common questions about Hedra AI here.</p>
+        <div class="faq-container">
+            <!-- FAQ 1: What is Hedra AI? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q1.question">What is Hedra AI?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer">
+                    <p data-i18n-key="faq.q1.answer">Hedra AI is a revolutionary digital content creation tool focused on generating highly expressive character videos from text and images. Our advanced AI technology enables these characters to speak, sing, and even rap naturally, providing creators with unprecedented narrative possibilities. Hedra's mission is to democratize professional-grade video production, making it easy for every creator to turn ideas into engaging audiovisual experiences.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 2: How to use Hedra AI to generate videos? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q2.question">How to use Hedra AI to generate videos?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q2.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>Hedra AI's creation process is simple and intuitive, following three core steps:</p>
+                    <ol>
+                        <li><strong>Content Preparation:</strong> Input the text you want the character to perform; our AI voice engine will convert it into natural, fluent speech. You can choose different languages, tones, and emotional nuances to ensure the voice perfectly matches your creative vision.</li>
+                        <li><strong>Character Setup:</strong> Upload your favorite image as a character base, or select from our meticulously designed character library. We support various common image formats (.jpeg, .png, .webp), ensuring your creativity isn't limited by technology.</li>
+                        <li><strong>Content Synthesis:</strong> Click the generate button, and our AI will seamlessly integrate speech and character, creating a smooth, natural video that brings your character to life expressing your content. The entire process typically takes only a few minutes and can be completed without professional skills.</li>
+                    </ol>
+                    <p>Once completed, you can directly download the finished product or share it on social platforms, bringing your creativity to the world.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 3: What core features does Hedra AI offer? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q3.question">What core features does Hedra AI offer?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q3.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>Hedra AI integrates multiple cutting-edge technologies to provide comprehensive support for creators:</p>
+                    <ul>
+                        <li>Multimodal Expression: Supports characters speaking, singing, and rapping, offering diverse expression forms for content creation.</li>
+                        <li>Broad Format Compatibility: Fully supports mainstream image formats like .jpeg, .png, and .webp, ensuring a smooth creation process.</li>
+                        <li>Precise Lip Sync: AI-driven accurate lip-sync animation ensures natural and fluent character expression.</li>
+                        <li>Dynamic Expression Control: Characters can display rich facial expressions, enhancing content expressiveness.</li>
+                        <li>One-Click Workflow: Fully automated processing from text to finished video, greatly improving creation efficiency.</li>
+                        <li>Cloud Rendering Processing: All complex calculations are done in the cloud, allowing professional content creation without high-performance devices.</li>
+                        <li>Multi-Platform Compatibility: Generated videos are suitable for major social media platforms, supporting seamless sharing and dissemination.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FAQ 4: What are the current limitations of Hedra AI? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q4.question">What are the current limitations of Hedra AI?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q4.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>We are committed to continuously improving Hedra AI, but there are currently some limitations users should be aware of:</p>
+                    <ul>
+                        <li>Video Length Limit: Currently, the maximum length for a single video is 60 seconds. This design aims to balance processing speed and quality, ensuring the best user experience.</li>
+                        <li>Character Customization Depth: While basic character customization is supported, advanced actions and complex scene interaction features are still under development.</li>
+                        <li>Background Scene Options: The current stage focuses mainly on character performance, and background scene options are somewhat limited.</li>
+                        <li>Multi-Character Interaction: Complex interactions between multiple characters in the same video are not yet supported.</li>
+                        <li>Real-time Editing Capability: Real-time fine-tuning adjustments after generation are not currently supported.</li>
+                    </ul>
+                    <p>Our development team is actively addressing these limitations, and future versions will gradually overcome these boundaries.</p>
+                </div>
+            </div>
+
+             <!-- FAQ 5: How will Hedra AI increase the video length limit? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q5.question">How will Hedra AI increase the video length limit?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q5.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>Extending video length is one of our recent development priorities, and we are addressing it from multiple angles:</p>
+                    <ul>
+                        <li>Optimizing Rendering Architecture: Reconstructing the cloud rendering pipeline to improve long video processing efficiency.</li>
+                        <li>Segmented Processing Technology: Introducing intelligent segmented processing and seamless splicing technology to support longer content creation.</li>
+                        <li>Advanced Compression Algorithms: Applying next-generation video compression technology to reduce file size while maintaining quality.</li>
+                        <li>Progressive Loading Mechanism: Implementing technology to render while loading, reducing user waiting time.</li>
+                        <li>Dynamic Resource Allocation: Intelligently allocating computing resources based on content complexity to improve processing efficiency.</li>
+                    </ul>
+                    <p>We plan to increase the length limit to 3 minutes in the next version and gradually extend it to 5-10 minutes within the next 12 months to meet more creation scenario needs.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 6: What improvements might Hedra AI introduce in the future? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q6.question">What improvements might Hedra AI introduce in the future?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q6.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>Our product roadmap includes several exciting innovation plans:</p>
+                    <ul>
+                        <li>Character Customization Upgrade: Offering richer character customization options, including detailed adjustments for clothing, hairstyle, and accessories.</li>
+                        <li>Expanded Audio Support: Adding more languages, accents, and rap styles, supporting music background mixing and emotional adjustment.</li>
+                        <li>Scene Editor: Introducing an intuitive scene building tool, allowing users to create personalized background environments.</li>
+                        <li>Multi-Character Interaction: Supporting multi-character dialogue scenes to achieve rich narrative possibilities.</li>
+                        <li>Script Editing Enhancement: Providing advanced script editing features, supporting timeline adjustments and emotional tagging.</li>
+                        <li>API Interface Opening: Providing API access for developers to support integration with third-party applications.</li>
+                        <li>Mobile Applications: Launching dedicated iOS and Android apps for creation anytime, anywhere.</li>
+                        <li>AR/VR Experience: Exploring character interaction possibilities in augmented reality and virtual reality.</li>
+                    </ul>
+                    <p>These innovations will be rolled out in stages, continuously enhancing Hedra AI's creative capabilities and user experience.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 7: How does Hedra AI plan to improve the overall user experience? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q7.question">How does Hedra AI plan to improve the overall user experience?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q7.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>We are comprehensively optimizing the user experience, with specific measures including:</p>
+                    <ul>
+                        <li>Interface Redesign: Adopting an intuitive drag-and-drop interface and contextual hints to lower the learning curve.</li>
+                        <li>Template Library Expansion: Providing diverse preset templates to help new users get started quickly.</li>
+                        <li>Intelligent Assistant Integration: Introducing AI assistance tools to provide real-time suggestions during the creation process.</li>
+                        <li>Interactive Tutorials: Developing a series of interactive tutorials covering all features from basic to advanced.</li>
+                        <li>Community Platform Building: Creating a creator community to promote experience sharing and inspiration exchange.</li>
+                        <li>Personalized Recommendations: Providing customized suggestions and resource recommendations based on user habits.</li>
+                        <li>Cloud Project Management: Offering cloud storage and version control to ensure creation security and convenience.</li>
+                        <li>Feedback Mechanism Optimization: Simplifying user feedback channels to accelerate problem resolution.</li>
+                        <li>Performance Monitoring Optimization: Continuously monitoring and improving system response speed and stability.</li>
+                    </ul>
+                    <p>We believe that a truly outstanding product not only has powerful features but also makes these features accessible and easy to master.</p>
+                </div>
+            </div>
+
+            <!-- FAQ 8: How does Hedra AI handle user data and created content? -->
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span data-i18n-key="faq.q8.question">How does Hedra AI handle user data and created content?</span>
+                    <i class="fas fa-chevron-down faq-icon"></i>
+                </button>
+                <div class="faq-answer" data-i18n-key="faq.q8.answer" data-i18n-dangerouslysetinnerhtml>
+                    <p>User privacy and content rights are our primary considerations:</p>
+                    <ul>
+                        <li>Data Security Assurance: Employing industry-leading encryption technology to protect user-uploaded materials and generated content.</li>
+                        <li>Clear Copyright Policy: Content created using Hedra AI belongs entirely to the creator; we do not claim any rights.</li>
+                        <li>Data Usage Transparency: Clearly explaining how we use data to improve services; users have full control over their information.</li>
+                        <li>Selective Data Sharing: Users can decide whether to share anonymized data for product improvement.</li>
+                        <li>Content Moderation Balance: Implementing necessary content policies while maximizing creative freedom.</li>
+                        <li>Regular Data Cleanup: Unsaved project data will be automatically cleared according to schedule to reduce privacy risks.</li>
+                        <li>Compliance Commitment: Strictly adhering to global privacy regulations such as GDPR and CCPA.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing-section" class="page-section">
+        <!-- Pricing block will be here -->
+    </section>
+    <section id="blog-section" class="page-section">
+        <!-- Blog block will be here -->
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html> 

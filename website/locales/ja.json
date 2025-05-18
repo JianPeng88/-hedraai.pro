@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "私の多言語ウェブサイト",
+        "description": "これはHTML、CSS、JavaScriptで構築された素晴らしい多言語ウェブサイトの日本語の説明です。"
+    },
+    "logo": {
+        "text": "私のロゴ"
+    },
+    "nav": {
+        "home": "ホーム",
+        "about": "私達について",
+        "services": "サービス",
+        "contact": "連絡先"
+    },
+    "homepage": {
+        "welcomeTitle": "私の素晴らしいウェブサイトへようこそ！",
+        "welcomeMessage": "HTML、CSS、JavaScriptを使用して、ここに素晴らしい多言語体験を構築します。"
+    },
+    "footer": {
+        "copy": "&copy; 2023 私の素晴らしいウェブサイト"
+    },
+    "languageNames": {
+        "en": "English (英語)",
+        "zh": "中国語 (繁体)",
+        "es": "Español (スペイン語)",
+        "it": "Italiano (イタリア語)",
+        "fr": "Français (フランス語)",
+        "ja": "日本語",
+        "ko": "한국어 (韓国語)",
+        "pt": "Português (ポルトガル語)",
+        "de": "Deutsch (ドイツ語)",
+        "id": "Bahasa Indonesia (インドネシア語)",
+        "nl": "Nederlands (オランダ語)"
+    }
+} 

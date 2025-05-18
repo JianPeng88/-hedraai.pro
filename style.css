@@ -1,0 +1,949 @@
+/* 全局变量定义 */
+:root {
+  --primary-blue: #3e51f5; /* 主题蓝色 */
+  --dark-blue: #3245e0;    /* 深蓝色，用于悬停效果 */
+  --text-dark: #000000;   /* 深色文字，用于标题等 */
+  --text-gray: #555555;   /* 灰色文字，用于描述等 */
+  --white: #ffffff;      /* 白色 */
+  --arrow-red: #ff5a5a;   /* 箭头红色 */
+}
+
+/* 基础页面重置和默认样式 */
+body {
+  font-family: 'Arial', 'Helvetica', sans-serif; /* 无衬线字体 */
+  margin: 0;
+  padding: 0;
+  background-color: var(--white); /* 白色背景 */
+  color: var(--text-dark); /* 默认文字颜色 */
+  line-height: 1.6; /* 默认行高 */
+  overflow-x: hidden; /* 防止水平滚动条 */
+}
+
+/* 平滑滚动效果 (如果需要全局应用) */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 首屏区域样式 */
+.hero {
+  display: flex; /* 使用 Flexbox 布局 */
+  flex-direction: column; /* 子元素垂直排列 */
+  align-items: center; /* 子元素水平居中 */
+  text-align: center; /* 文本居中 */
+  padding: 4rem 2rem; /* 内边距，上下 4rem，左右 2rem */
+  max-width: 1200px; /* 内容最大宽度 */
+  margin: 0 auto; /* 整体居中 */
+  min-height: 100vh; /* 首屏至少占满整个视口高度 */
+  box-sizing: border-box; /* padding 和 border 不会增加元素实际宽高 */
+  padding-top: 8rem; /* 原 padding-top 4rem + 导航栏大致高度 4rem (估算) */
+  min-height: calc(100vh + 4rem); /* 确保内容区域足够 */
+}
+
+/* 主标题样式 */
+.main-title {
+  font-size: 3rem; /* 字体大小，约 48px (假设 1rem = 16px) */
+  font-weight: 700; /* 粗体 */
+  color: var(--text-dark);
+  margin-bottom: 1rem; /* 底部外边距 */
+}
+
+/* 品牌名称容器 */
+.brand-container {
+  position: relative; /* 为下划线定位提供基准 */
+  margin-bottom: 1rem; /* 底部外边距，与tag区分开 */
+}
+
+/* 品牌名称样式 */
+.brand-name {
+  font-size: 4rem; /* 字体大小，约 64px */
+  font-weight: 700; /* 粗体 */
+  color: var(--primary-blue);
+  margin: 0.5rem 0; /* 上下外边距 */
+  position: relative; /* 确保在下划线之上 */
+  z-index: 1;
+}
+
+/* 品牌名称下划线样式 */
+.underline {
+  height: 5px; /* 下划线高度 */
+  background-color: var(--primary-blue);
+  width: 110%; /* 比文字略宽 */
+  position: absolute; /* 绝对定位 */
+  left: 50%;
+  bottom: 5px; /* 控制下划线与文字的垂直距离 */
+  border-radius: 3px; /* 轻微圆角 */
+  transform: translateX(-50%) rotate(-1deg); /* 水平居中并轻微旋转，形成弯曲效果 */
+  z-index: 0;
+}
+
+/* AI 功能标签样式 */
+.tag {
+  background-color: var(--primary-blue);
+  color: var(--white);
+  padding: 0.5rem 1.5rem; /* 内边距 */
+  border-radius: 25px; /* 胶囊形状 */
+  font-size: 1rem; /* 字体大小 */
+  font-weight: 500; /* 中等粗细 */
+  margin: 1.5rem 0; /* 上下外边距，增加与描述文字的间距 */
+}
+
+/* 描述文字样式 */
+.description {
+  font-size: 1.125rem; /* 字体大小，约 18px */
+  line-height: 1.7; /* 行高 */
+  color: var(--text-gray);
+  max-width: 800px; /* 最大宽度，避免过长 */
+  margin: 1.5rem 0 2.5rem; /* 上中下外边距，增加与按钮的间距 */
+}
+
+/* 行动号召按钮容器样式 */
+.cta-container {
+  margin: 2rem 0; /* 上下外边距 */
+  position: relative; /* 用于可能的动画或装饰元素定位 */
+}
+
+/* "试用 Hedra AI"按钮样式 */
+.try-button {
+  display: inline-flex; /* 使用 inline-flex 实现内容和箭头对齐 */
+  align-items: center; /* 垂直居中对齐按钮内元素 */
+  background-color: var(--primary-blue);
+  color: var(--white);
+  font-size: 1.25rem; /* 字体大小，约 20px (比描述文字大) */
+  font-weight: 600; /* 较粗字体 */
+  text-decoration: none; /* 去除链接下划线 */
+  padding: 1rem 2.5rem; /* 内边距 (16px 40px) */
+  border-radius: 24px; /* 圆角 */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* 过渡动画 */
+  box-shadow: 0 4px 10px rgba(62, 81, 245, 0.3); /* 盒子阴影 */
+  border: none; /* 移除默认边框 */
+  cursor: pointer; /* 鼠标指针样式 */
+}
+
+/* 按钮悬停效果 */
+.try-button:hover {
+  background-color: var(--dark-blue); /* 背景色变暗 */
+  transform: translateY(-3px); /* 轻微上移 */
+  box-shadow: 0 6px 15px rgba(62, 81, 245, 0.45); /* 阴影增强 */
+}
+
+/* 按钮点击效果 */
+.try-button:active {
+  transform: translateY(0px) scale(0.98); /* 按下时回到原位并轻微缩小 */
+  box-shadow: 0 2px 5px rgba(62, 81, 245, 0.25); /* 阴影减弱 */
+}
+
+/* 按钮内箭头样式 */
+.try-button .arrow {
+  margin-left: 12px; /* 与文字间距 */
+  color: var(--arrow-red); /* 红色箭头 */
+  font-weight: bold; /* 加粗 */
+  font-size: 1.5rem; /* 箭头稍大一些 */
+  transition: transform 0.3s ease; /* 为箭头添加过渡效果 */
+}
+
+/* 按钮悬停时箭头的轻微动画 */
+.try-button:hover .arrow {
+  transform: translateX(5px); /* 箭头轻微右移 */
+}
+
+/* 响应式设计调整 */
+@media (max-width: 768px) { /* 中等屏幕，如平板 */
+  .hero {
+    padding: 3rem 1.5rem;
+    min-height: auto; /* 在小屏幕上，不强制占满全屏 */
+    padding-top: 7rem; /* 根据导航栏实际高度调整 */
+  }
+  .main-title {
+    font-size: 2.25rem; /* 约 36px */
+  }
+  .brand-name {
+    font-size: 3rem; /* 约 48px */
+  }
+  .underline {
+    bottom: 3px;
+    height: 4px;
+  }
+  .tag {
+    font-size: 0.9rem;
+    padding: 0.4rem 1.2rem;
+  }
+  .description {
+    font-size: 1rem; /* 约 16px */
+    margin: 1rem 0 2rem;
+  }
+  .try-button {
+    font-size: 1.1rem; /* 约 17.6px */
+    padding: 0.9rem 1.8rem; /* 调整内边距 */
+  }
+  .try-button .arrow {
+    font-size: 1.3rem;
+  }
+  .video-container {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) { /* 小型屏幕，如手机 */
+  .hero {
+    padding: 2rem 1rem;
+    padding-top: 6rem; /* 根据导航栏实际高度调整 */
+  }
+  .main-title {
+    font-size: 1.8rem; /* 约 28.8px */
+  }
+  .brand-name {
+    font-size: 2.5rem; /* 约 40px */
+  }
+   .underline {
+    bottom: 2px;
+    height: 3px;
+    width: 100%;
+    transform: translateX(-50%) rotate(-0.5deg); /* 弯曲度减小 */
+  }
+  .tag {
+    font-size: 0.8rem;
+    padding: 0.3rem 1rem;
+    margin: 1rem 0;
+  }
+  .description {
+    font-size: 0.9rem; /* 约 14.4px */
+    margin: 1rem 0 1.5rem;
+  }
+  .try-button {
+    font-size: 1rem; /* 约 16px */
+    padding: 0.8rem 1.5rem;
+    width: calc(100% - 3rem); /* 让按钮在小屏幕上更宽 */
+    justify-content: center; /* 按钮内文字居中 */
+  }
+  .try-button .arrow {
+    font-size: 1.2rem;
+    margin-left: 8px;
+  }
+  .nav-actions {
+    /* 如果菜单已经展开，可以考虑隐藏这两个按钮，或者将它们移到菜单内部 */
+  }
+}
+
+/* 考虑添加按钮脉动或光晕效果 (示例) */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(62, 81, 245, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(62, 81, 245, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(62, 81, 245, 0);
+  }
+}
+
+/* 如果希望按钮有默认的脉动效果，可以取消下面的注释 */
+/*
+.try-button {
+  animation: pulse 2s infinite;
+}
+*/
+
+/* 导航栏样式 */
+.navbar {
+  /* background-color: var(--primary-blue); */ /* 移除之前的单色背景 */
+  background: linear-gradient(90deg, #2193b0, #6dd5ed); /* 新的渐变蓝绿色 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 0.8rem 2rem;
+  box-sizing: border-box;
+  transition: padding 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between; /* 两端对齐 */
+  align-items: center;
+}
+
+.nav-logo {
+  color: var(--white); /* Logo 文字改为白色 */
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85); /* 导航链接文字改为半透明白色 */
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--white); /* 悬停和激活时为纯白色 */
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.nav-button {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-left: 1rem;
+}
+
+.login-button {
+  color: var(--white); /* 登录按钮文字改为白色 */
+  background-color: transparent;
+  border: 2px solid var(--white); /* 边框改为白色 */
+}
+
+.login-button:hover {
+  background-color: var(--white);
+  color: var(--primary-blue); /* 悬停时背景白色，文字蓝色 */
+}
+
+.signup-button {
+  background-color: var(--white); /* 注册按钮背景白色 */
+  color: var(--primary-blue);    /* 文字蓝色 */
+  border: 2px solid var(--white);
+}
+
+.signup-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.9);
+  color: var(--dark-blue);
+}
+
+/* 汉堡菜单按钮 (移动端显示) */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--white); /* 汉堡菜单图标改为白色 */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* 视频容器样式 */
+.video-container {
+  margin-top: 2.5rem; /* 与上方按钮的间距 */
+  width: 100%;
+  max-width: 800px; /* 限制视频最大宽度 */
+  aspect-ratio: 16 / 9; /* 保持16:9的宽高比 */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  border-radius: 12px; /* 圆角 */
+  overflow: hidden; /* 确保iframe在容器内 */
+}
+
+.video-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none; /* 移除iframe默认边框 */
+}
+
+/* 用于后续区块的通用样式 */
+.page-section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* 确保区块内容不会被固定导航栏遮挡太多，可以通过scroll-margin-top实现平滑滚动定位修正 */
+    scroll-margin-top: 80px; /* 根据导航栏实际高度调整 */
+}
+
+/* 响应式导航栏 */
+@media (max-width: 992px) {
+  .nav-menu {
+    display: none; /* 隐藏主菜单 */
+    flex-direction: column; /* 垂直排列 */
+    position: absolute;
+    top: 100%; /* 在导航栏下方 */
+    left: 0;
+    /* background-color: var(--primary-blue); */ /* 移除之前的单色背景 */
+    background: linear-gradient(90deg, #2193b0, #6dd5ed); /* 新的渐变蓝绿色 */
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+  }
+
+  .nav-menu.active {
+    display: flex; /* 点击汉堡菜单时显示 */
+  }
+
+  .nav-item {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-item .nav-link {
+    /* ... */
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.15); */ /* 根据新背景调整或移除 */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* 尝试调整分割线颜色使其更明显 */
+  }
+  .nav-item:last-child .nav-link {
+    border-bottom: none;
+  }
+
+  .nav-actions {
+      /* 在中等屏幕下可以考虑将登录注册按钮也放入折叠菜单，或者保持在右上角 */
+      /* 如果要保持在右上角，可能需要调整logo和汉堡按钮的布局 */
+      /* 这里暂时保持原样，如果需要调整请告知 */
+  }
+
+  .nav-toggle {
+    display: block; /* 显示汉堡菜单按钮 */
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.9); /* 确保在渐变背景下有良好对比度 */
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--white);
+  }
+}
+
+@media (max-width: 768px) { /* 中等屏幕，如平板 */
+    .nav-actions .nav-button {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+    .nav-logo {
+        font-size: 1.5rem;
+    }
+    /* 英雄区标题等元素已在之前做过响应式处理 */
+    .hero {
+        padding-top: 7rem; /* 根据导航栏实际高度调整 */
+    }
+    .video-container {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) { /* 小型屏幕，如手机 */
+  /* 对于非常小的屏幕，可以考虑让登录和注册按钮垂直排列或进一步简化 */
+  .nav-actions {
+    /* 如果菜单已经展开，可以考虑隐藏这两个按钮，或者将它们移到菜单内部 */
+  }
+  .hero {
+      padding-top: 6rem; /* 根据导航栏实际高度调整 */
+  }
+}
+
+/* 通用区块标题样式 */
+.section-title {
+  font-size: 2.5rem; /* 标题字体大小 */
+  font-weight: 700;
+  color: var(--text-dark);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem; /* 副标题字体大小 */
+  color: var(--text-gray);
+  text-align: center;
+  margin-bottom: 3rem; /* 与下方内容的间距 */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 核心特点区块 (#features-section) */
+#features-section {
+  background-color: #f9f9fc; /* 淡灰色背景，与白色内容区区分 */
+}
+
+.features-grid {
+  display: grid;
+  /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */ /* 旧的流动布局 */
+  grid-template-columns: repeat(3, 1fr); /* 在较大屏幕上固定为3列 */
+  gap: 2rem;
+}
+
+.feature-card {
+  background-color: var(--white);
+  padding: 2rem; /* 内边距 */
+  border-radius: 12px; /* 圆角 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 轻微阴影 */
+  text-align: center; /* 内容居中 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 过渡效果 */
+}
+
+.feature-card:hover {
+  transform: translateY(-8px); /* 悬停时轻微上移 */
+  box-shadow: 0 10px 25px rgba(62, 81, 245, 0.15); /* 悬停时阴影增强，使用主题色 */
+}
+
+.feature-icon {
+  font-size: 2.8rem; /* 图标大小 */
+  color: var(--primary-blue);
+  margin-bottom: 1.5rem; /* 与标题的间距 */
+  line-height: 1; /* 确保图标垂直居中 */
+}
+
+.feature-title {
+  font-size: 1.5rem; /* 特点标题大小 */
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+}
+
+.feature-description {
+  font-size: 0.95rem; /* 特点描述文字大小 */
+  color: var(--text-gray);
+  line-height: 1.7;
+}
+
+/* 核心特点区块响应式调整 */
+@media (max-width: 992px) { /* 平板等中型屏幕，改为2列 */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .feature-card {
+    padding: 1.5rem;
+  }
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .feature-title {
+    font-size: 1.3rem;
+  }
+  .feature-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */ /* 之前的设定 */
+    /* 在平板竖屏或较大手机上，保持2列或根据内容调整 */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 允许流动到1列或2列 */
+  }
+  .section-title {
+    font-size: 2rem;
+  }
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  .feature-card {
+    padding: 1.5rem;
+  }
+  .feature-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .feature-title {
+    font-size: 1.3rem;
+  }
+  .feature-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+    .features-grid {
+        grid-template-columns: 1fr; /* 在非常小的屏幕上，卡片堆叠 */
+    }
+}
+
+/* 工作流程区块 (#how-it-works-section) */
+#how-it-works-section {
+  background-color: var(--white); /* 白色背景 */
+}
+
+.workflow-steps-container {
+  display: flex;
+  flex-direction: column; /* 默认垂直排列，便于后续用伪元素添加连接线 */
+  gap: 2.5rem; /* 步骤之间的间距 */
+  position: relative; /* 用于连接线的定位 */
+  max-width: 800px; /* 限制最大宽度，使其更易读 */
+  margin: 0 auto; /* 居中显示 */
+}
+
+/* 在桌面端，如果步骤较少，可以考虑水平排列 */
+/* 这里暂时以垂直排列为主，更通用 */
+
+.workflow-step {
+  display: flex;
+  align-items: flex-start; /* 顶部对齐 */
+  position: relative; /* 用于连接线或装饰元素的定位 */
+  padding: 1.5rem;
+  background-color: #f9f9fc; /* 给每个步骤卡片一个浅色背景 */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+}
+
+.step-number-container {
+  display: flex;
+  flex-direction: column; /* 编号和图标垂直排列 */
+  align-items: center;
+  margin-right: 1.5rem;
+  flex-shrink: 0; /* 防止缩小 */
+}
+
+.step-number {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  background-color: var(--white);
+  border: 2px solid var(--primary-blue);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem; /* 编号和图标之间的间距 */
+  box-shadow: 0 2px 5px rgba(62, 81, 245, 0.2);
+}
+
+.step-icon {
+  font-size: 1.8rem;
+  color: var(--primary-blue);
+}
+
+.step-content {
+  flex-grow: 1; /* 占据剩余空间 */
+}
+
+.step-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-top: 0; /* 移除默认的上边距 */
+  margin-bottom: 0.5rem;
+}
+
+.step-description {
+  font-size: 0.95rem;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 0; /* 移除默认的下边距 */
+}
+
+/* 添加步骤之间的连接线 (垂直方向) */
+.workflow-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: calc(25px + 1.5rem - 1px); /* (编号宽度/2 + 右边距 - 线条宽度/2) 大约定位到编号下方中心 */
+  top: calc(50px + 0.8rem + 1.8rem); /* (编号高度 + 下边距 + 图标高度) 大约从图标下方开始 */
+  bottom: -2.5rem; /* 连接到下一个步骤的间隙 */
+  width: 2px;
+  background-color: var(--primary-blue);
+  opacity: 0.3;
+}
+
+/* 工作流程区块响应式调整 */
+@media (max-width: 768px) {
+  .workflow-steps-container {
+    gap: 2rem;
+  }
+  .workflow-step {
+    padding: 1.2rem;
+  }
+  .step-number-container {
+    margin-right: 1rem;
+  }
+  .step-number {
+    font-size: 1.5rem;
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.6rem;
+  }
+  .step-icon {
+    font-size: 1.5rem;
+  }
+  .step-title {
+    font-size: 1.25rem;
+  }
+  .step-description {
+    font-size: 0.9rem;
+  }
+  .workflow-step:not(:last-child)::after {
+    left: calc(22.5px + 1rem - 1px);
+    bottom: -2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .workflow-step {
+    flex-direction: column; /* 在非常小的屏幕上，编号/图标和内容垂直排列 */
+    align-items: center; /* 整体居中 */
+    text-align: center;
+  }
+  .step-number-container {
+    margin-right: 0;
+    margin-bottom: 1rem; /* 编号/图标区域和内容区域的间距 */
+  }
+  .workflow-step:not(:last-child)::after {
+    display: none; /* 在堆叠布局时隐藏连接线，因为它们不再有意义 */
+  }
+}
+
+/* 导航栏滚动时的样式 */
+.navbar-scrolled {
+  padding: 0.5rem 2rem; /* 减小上下内边距 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* 增强阴影 */
+}
+
+/* =============================================
+   FAQ Section Styles
+   ============================================= */
+.faq-section {
+    padding: 80px 20px;
+    background-color: #ffffff; /* 白色背景 */
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-section .section-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 50px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-item {
+    margin-bottom: 15px; /* FAQ条目之间的间距 */
+    border: 1px solid #e0e0e0; /* 条目边框 */
+    border-radius: 8px; /* 圆角 */
+    overflow: hidden; /* 确保子元素圆角生效 */
+}
+
+.faq-question {
+    display: flex; /* 让问题文本和图标在同一行 */
+    justify-content: space-between; /* 问题文本和图标分别在两侧 */
+    align-items: center; /* 垂直居中 */
+    width: 100%;
+    padding: 20px; /* 增加内边距 */
+    background: linear-gradient(to right, #2193b0, #6dd5ed); /* 渐变蓝绿色背景 */
+    color: white; /* 文字颜色 */
+    border: none;
+    text-align: left;
+    font-size: 1.1rem; /* 字体大小 */
+    font-weight: 600; /* 字体粗细 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background: linear-gradient(to right, #1e839f, #5bc8e3); /* 悬停时加深渐变 */
+}
+
+.faq-question i.fas {
+    transition: transform 0.3s ease; /* 图标旋转动画 */
+    font-size: 1rem; /* 图标大小 */
+}
+
+.faq-question.active i.fas {
+    transform: rotate(180deg); /* 问题展开时，图标旋转180度 */
+}
+
+.faq-answer {
+    padding: 0 20px; /* 左右内边距 */
+    background-color: #f9f9fc; /* 答案区域背景色，淡灰色 */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out; /* 高度和内边距的过渡动画 */
+    border-top: 1px solid #e0e0e0; /* 在问题和答案之间添加分隔线 */
+}
+
+.faq-answer p {
+    margin: 0; /* 重置段落外边距 */
+    padding: 20px 0; /* 上下内边距 */
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 当答案展开时的样式 */
+.faq-answer.active {
+    /* max-height 由JS动态设置，或者设一个足够大的值 */
+    /* padding: 20px; 会在JS中处理或者通过增加高度来体现 */
+}
+
+/* =============================================
+   Language Selector Styles
+   ============================================= */
+.language-selector-container {
+  position: relative;
+  display: inline-block;
+  /* margin-left: auto; Removed as it's now a flex item, alignment handled by nav-container */
+  margin-left: 1rem; /* Add some space from nav-actions */
+}
+
+.language-selector-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100px; /* Adjusted from 120px for better fit */
+  padding: 0.6rem 0.8rem; /* Matched with other nav-buttons */
+  background-color: transparent; /* Match login button style */
+  border: 2px solid var(--white); /* Match login button style */
+  border-radius: 20px; /* Matched with other nav-buttons */
+  color: var(--white); /* Match login button style */
+  font-size: 0.9rem; /* Matched with other nav-buttons */
+  font-weight: 600; /* Matched with other nav-buttons */
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-selector-button:hover {
+  background-color: var(--white);
+  color: var(--primary-blue);
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem; /* Adjusted from 10px */
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.language-selector-button[aria-expanded="true"] .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.language-dropdown {
+  position: absolute;
+  top: calc(100% + 5px); /* Add a small gap */
+  right: 0;
+  min-width: 120px; /* Ensure dropdown is wide enough */
+  margin-top: 4px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1100; /* Higher than navbar's z-index */
+  padding: 0.5rem 0; /* Add some padding for items */
+  list-style: none;
+  max-height: 200px;
+  overflow-y: auto;
+  display: none; /* Initially hidden, JS will toggle */
+}
+
+.language-dropdown.open {
+    display: block;
+}
+
+.language-option {
+  padding: 0.7rem 1rem; /* Increased padding for better touch targets */
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.language-option:hover {
+  background-color: #f0f7fa; /* Light blue hover */
+  color: var(--primary-blue);
+}
+
+.language-option.selected {
+  background-color: #e6f2f7; /* Slightly darker selected background */
+  color: var(--primary-blue);
+  font-weight: 600;
+}
+
+/* 响应式调整 for Language Selector */
+@media (max-width: 992px) {
+  /* When nav menu becomes toggleable, decide how to place language selector */
+  /* Option 1: Hide it if space is an issue */
+  /* .language-selector-container {
+    display: none; 
+  } */
+  /* Option 2: Keep it, but maybe simplify or ensure it fits */
+  .language-selector-container {
+    margin-left: 0.5rem;
+  }
+  .language-selector-button {
+    min-width: auto; /* Allow it to shrink */
+    padding: 0.5rem 0.7rem;
+    font-size: 0.8rem;
+  }
+  .dropdown-arrow {
+    font-size: 0.6rem;
+    margin-left: 5px;
+  }
+  .language-dropdown {
+    /* Ensure it doesn't overflow weirdly on mobile */
+    /* May need to adjust width or use transform to position if it's too wide */
+  }
+}
+
+@media (max-width: 768px) {
+  .language-selector-container {
+    /* margin-right: 10px; */ /* Already handled by nav-container spacing */
+  }
+  .language-selector-button {
+    /* min-width: 100px; */
+    /* padding: 6px 10px; */
+    /* font-size: 13px; */
+  }
+}
+
+@media (max-width: 480px) {
+    /* On very small screens, if the main nav actions are complex, the language selector might need to be simplified or moved into the toggle menu */
+    /* For now, let's assume it can stay, but if layout breaks, it's a point for reconsideration */
+    .language-selector-container {
+        margin-left: 5px; /* Reduce margin further */
+    }
+    .language-selector-button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.75rem;
+    }
+    #selectedLanguageName {
+        max-width: 50px; /* Limit width of language name text */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block; /* Needed for ellipsis to work with span */
+    }
+} 

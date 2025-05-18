@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">Mon Site Web Multilingue</title>
+    <meta name="description" data-i18n="meta.description" content="Ceci est une description en français pour un fantastique site web multilingue construit avec HTML, CSS et JavaScript.">
+    
+    <!-- SEO: hreflang tags - Update yourdomain.com -->
+    <link rel="alternate" hreflang="en" href="https://yourdomain.com/index.html" />
+    <link rel="alternate" hreflang="es" href="https://yourdomain.com/es/index.html" />
+    <link rel="alternate" hreflang="it" href="https://yourdomain.com/it/index.html" />
+    <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/index.html" />
+    <link rel="alternate" hreflang="zh" href="https://yourdomain.com/zh/index.html" />
+    <link rel="alternate" hreflang="ja" href="https://yourdomain.com/ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="https://yourdomain.com/ko/index.html" />
+    <link rel="alternate" hreflang="pt" href="https://yourdomain.com/pt/index.html" />
+    <link rel="alternate" hreflang="de" href="https://yourdomain.com/de/index.html" />
+    <link rel="alternate" hreflang="id" href="https://yourdomain.com/id/index.html" />
+    <link rel="alternate" hreflang="nl" href="https://yourdomain.com/nl/index.html" />
+    <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/index.html" />
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo" data-i18n="logo.text">MonLogo</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" data-i18n="nav.home">Accueil</a></li>
+                    <li><a href="#" data-i18n="nav.about">À Propos</a></li>
+                    <li><a href="#" data-i18n="nav.services">Services</a></li>
+                    <li><a href="#" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="language-dropdown">
+                <button class="language-btn">
+                    <span id="current-language">Français</span> <!-- Populated by JS -->
+                    <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 1l4 4 4-4"/>
+                    </svg>
+                </button>
+                <div class="language-options">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 data-i18n="homepage.welcomeTitle">Bienvenue sur Mon Super Site Web !</h1>
+        <p data-i18n="homepage.welcomeMessage">Nous allons construire une incroyable expérience multilingue ici en utilisant HTML, CSS et JavaScript.</p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copy">&copy; 2023 Mon Super Site Web</p>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+</body>
+</html> 

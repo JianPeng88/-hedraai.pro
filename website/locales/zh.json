@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "我的多語言網站",
+        "description": "這是一个使用 HTML、CSS 和 JavaScript 构建的精彩多语言网站的中文繁体描述。"
+    },
+    "logo": {
+        "text": "我的Logo"
+    },
+    "nav": {
+        "home": "首頁",
+        "about": "關於我們",
+        "services": "服務項目",
+        "contact": "聯絡我們"
+    },
+    "homepage": {
+        "welcomeTitle": "歡迎來到我的精彩網站！",
+        "welcomeMessage": "我們將在這裡使用 HTML、CSS 和 JavaScript 打造一個支援多語言的絕佳體驗。"
+    },
+    "footer": {
+        "copy": "&copy; 2023 我的精彩网站"
+    },
+    "languageNames": {
+        "en": "English (英文)",
+        "zh": "中文繁體",
+        "es": "Español (西班牙文)",
+        "it": "Italiano (義大利文)",
+        "fr": "Français (法文)",
+        "ja": "日本語 (日文)",
+        "ko": "한국어 (韓文)",
+        "pt": "Português (葡萄牙文)",
+        "de": "Deutsch (德文)",
+        "id": "Bahasa Indonesia (印尼文)",
+        "nl": "Nederlands (荷蘭文)"
+    }
+} 

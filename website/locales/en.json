@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "My Multilingual Website",
+        "description": "This is an English description for a fantastic multilingual website built with HTML, CSS, and JavaScript."
+    },
+    "logo": {
+        "text": "MyLogo"
+    },
+    "nav": {
+        "home": "Home",
+        "about": "About Us",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "homepage": {
+        "welcomeTitle": "Welcome to My Awesome Website!",
+        "welcomeMessage": "We will build an amazing multilingual experience here using HTML, CSS, and JavaScript."
+    },
+    "footer": {
+        "copy": "&copy; 2023 My Awesome Website"
+    },
+    "languageNames": {
+        "en": "English",
+        "zh": "Chinese (Traditional)",
+        "es": "Español (Spanish)",
+        "it": "Italiano (Italian)",
+        "fr": "Français (French)",
+        "ja": "日本語 (Japanese)",
+        "ko": "한국어 (Korean)",
+        "pt": "Português (Portuguese)",
+        "de": "Deutsch (German)",
+        "id": "Bahasa Indonesia (Indonesian)",
+        "nl": "Nederlands (Dutch)"
+    }
+} 

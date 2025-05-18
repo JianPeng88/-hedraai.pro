@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "Mi Sitio Web Multilingüe",
+        "description": "Esta es una descripción en español para un fantástico sitio web multilingüe construido con HTML, CSS y JavaScript."
+    },
+    "logo": {
+        "text": "MiLogo"
+    },
+    "nav": {
+        "home": "Inicio",
+        "about": "Sobre Nosotros",
+        "services": "Servicios",
+        "contact": "Contacto"
+    },
+    "homepage": {
+        "welcomeTitle": "¡Bienvenido a Mi Increíble Sitio Web!",
+        "welcomeMessage": "Construiremos una increíble experiencia multilingüe aquí usando HTML, CSS y JavaScript."
+    },
+    "footer": {
+        "copy": "&copy; 2023 Mi Increíble Sitio Web"
+    },
+    "languageNames": {
+        "en": "English (Inglés)",
+        "zh": "Chino (Tradicional)",
+        "es": "Español",
+        "it": "Italiano",
+        "fr": "Français (Francés)",
+        "ja": "日本語 (Japonés)",
+        "ko": "한국어 (Coreano)",
+        "pt": "Português (Portugués)",
+        "de": "Deutsch (Alemán)",
+        "id": "Bahasa Indonesia (Indonesio)",
+        "nl": "Nederlands (Holandés)"
+    }
+} 

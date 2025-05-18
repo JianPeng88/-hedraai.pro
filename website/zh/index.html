@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.title">我的多語言網站</title>
+    <meta name="description" data-i18n="meta.description" content="這是一个使用 HTML、CSS 和 JavaScript 构建的精彩多语言网站的中文繁体描述。">
+    
+    <!-- SEO: hreflang tags - Update yourdomain.com -->
+    <link rel="alternate" hreflang="en" href="https://yourdomain.com/index.html" />
+    <link rel="alternate" hreflang="es" href="https://yourdomain.com/es/index.html" />
+    <link rel="alternate" hreflang="it" href="https://yourdomain.com/it/index.html" />
+    <link rel="alternate" hreflang="fr" href="https://yourdomain.com/fr/index.html" />
+    <link rel="alternate" hreflang="zh" href="https://yourdomain.com/zh/index.html" />
+    <link rel="alternate" hreflang="ja" href="https://yourdomain.com/ja/index.html" />
+    <link rel="alternate" hreflang="ko" href="https://yourdomain.com/ko/index.html" />
+    <link rel="alternate" hreflang="pt" href="https://yourdomain.com/pt/index.html" />
+    <link rel="alternate" hreflang="de" href="https://yourdomain.com/de/index.html" />
+    <link rel="alternate" hreflang="id" href="https://yourdomain.com/id/index.html" />
+    <link rel="alternate" hreflang="nl" href="https://yourdomain.com/nl/index.html" />
+    <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/index.html" />
+    
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo" data-i18n="logo.text">我的Logo</div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" data-i18n="nav.home">首頁</a></li>
+                    <li><a href="#" data-i18n="nav.about">關於我們</a></li>
+                    <li><a href="#" data-i18n="nav.services">服務項目</a></li>
+                    <li><a href="#" data-i18n="nav.contact">聯絡我們</a></li>
+                </ul>
+            </nav>
+            <div class="language-dropdown">
+                <button class="language-btn">
+                    <span id="current-language">中文繁體</span> <!-- Populated by JS -->
+                    <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M1 1l4 4 4-4"/>
+                    </svg>
+                </button>
+                <div class="language-options">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 data-i18n="homepage.welcomeTitle">歡迎來到我的精彩網站！</h1>
+        <p data-i18n="homepage.welcomeMessage">我們將在這裡使用 HTML、CSS 和 JavaScript 打造一個支援多語言的絕佳體驗。</p>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p data-i18n="footer.copy">&copy; 2023 我的精彩网站</p>
+        </div>
+    </footer>
+
+    <script src="../js/i18n.js"></script>
+</body>
+</html> 

@@ -1,0 +1,192 @@
+/* 基础样式设置 */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2980b9;
+    --text-color: #333;
+    --light-text: #666;
+    --background: #fff;
+    --light-bg: #f5f7fa;
+    --border-color: #e0e0e0;
+    --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg); /* 使用浅色背景 */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; /* 继承父元素颜色 */
+}
+
+/* 头部样式 */
+header {
+    background-color: var(--background);
+    box-shadow: var(--box-shadow);
+    padding: 15px 0;
+    position: sticky; /* 固定头部 */
+    top: 0;
+    z-index: 1000; /* 确保在最上层 */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo { /* 直接给 .logo 设置样式，而不是 .logo a */
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* 导航菜单 */
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 25px; /* 稍微增加间距 */
+}
+
+.main-nav a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 5px 0; /* 增加点击区域 */
+    position: relative; /* 为下划线动画做准备 */
+}
+
+.main-nav a::after { /* 添加一个下划线效果 */
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.main-nav a:hover::after {
+    width: 100%;
+}
+
+
+/* Clipto风格的语言下拉菜单 */
+.language-dropdown {
+    position: relative;
+}
+
+.language-btn {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: 6px; /* 稍微圆润一点 */
+    padding: 8px 12px; /* 调整内边距 */
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+.language-btn:hover,
+.language-dropdown.active .language-btn { /* 激活状态下的按钮样式 */
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2); /* 添加一点辉光效果 */
+}
+
+.dropdown-arrow {
+    margin-left: 8px;
+    stroke: var(--light-text); /* 保持浅色 */
+    transition: var(--transition);
+}
+
+.language-dropdown.active .dropdown-arrow { /* 激活时箭头旋转 */
+    transform: rotate(180deg);
+}
+
+.language-options {
+    position: absolute;
+    top: calc(100% + 5px); /* 与按钮保持一点距离 */
+    right: 0;
+    background: var(--background);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: var(--box-shadow);
+    z-index: 1001; /* 比头部高一级 */
+    min-width: 160px; /* 设置最小宽度 */
+    padding: 5px 0; /* 上下留白 */
+    display: none; /* 默认隐藏 */
+    opacity: 0; /* 配合动画 */
+    transform: translateY(-10px); /* 配合动画 */
+    transition: opacity 0.2s ease, transform 0.2s ease; /* 过渡动画 */
+}
+
+.language-dropdown.active .language-options { /* JS控制添加 .active 类来显示 */
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.language-options a {
+    display: block;
+    padding: 10px 15px; /* 增加选项的内边距 */
+    color: var(--text-color);
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.language-options a:hover {
+    background-color: var(--light-bg);
+    color: var(--primary-color);
+}
+
+/* 主内容区域样式 */
+main.container {
+    padding-top: 40px; /* 与头部保持距离 */
+    padding-bottom: 40px;
+    text-align: center; /* 保持内容居中 */
+}
+
+main h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: #333; /* 深色背景 */
+    color: #fff; /* 浅色文字 */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* 确保在内容不足时也能置底 */
+}
+
+footer p {
+    font-size: 0.9em;
+} 

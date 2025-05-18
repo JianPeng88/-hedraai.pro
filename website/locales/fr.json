@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "Mon Site Web Multilingue",
+        "description": "Ceci est une description en français pour un fantastique site web multilingue construit avec HTML, CSS et JavaScript."
+    },
+    "logo": {
+        "text": "MonLogo"
+    },
+    "nav": {
+        "home": "Accueil",
+        "about": "À Propos",
+        "services": "Services",
+        "contact": "Contact"
+    },
+    "homepage": {
+        "welcomeTitle": "Bienvenue sur Mon Super Site Web !",
+        "welcomeMessage": "Nous allons construire une incroyable expérience multilingue ici en utilisant HTML, CSS et JavaScript."
+    },
+    "footer": {
+        "copy": "&copy; 2023 Mon Super Site Web"
+    },
+    "languageNames": {
+        "en": "English (Anglais)",
+        "zh": "Chinois (Traditionnel)",
+        "es": "Español (Espagnol)",
+        "it": "Italiano (Italien)",
+        "fr": "Français",
+        "ja": "日本語 (Japonais)",
+        "ko": "한국어 (Coréen)",
+        "pt": "Português (Portugais)",
+        "de": "Deutsch (Allemand)",
+        "id": "Bahasa Indonesia (Indonésien)",
+        "nl": "Nederlands (Néerlandais)"
+    }
+} 

@@ -1,0 +1,35 @@
+{
+    "meta": {
+        "title": "My Multilingual Website (NL)",
+        "description": "This is a Dutch placeholder description for a fantastic multilingual website built with HTML, CSS, and JavaScript."
+    },
+    "logo": {
+        "text": "MyLogo (NL)"
+    },
+    "nav": {
+        "home": "Home (NL)",
+        "about": "About Us (NL)",
+        "services": "Services (NL)",
+        "contact": "Contact (NL)"
+    },
+    "homepage": {
+        "welcomeTitle": "Welcome to My Awesome Website! (NL)",
+        "welcomeMessage": "We will build an amazing multilingual experience here using HTML, CSS, and JavaScript. (NL)"
+    },
+    "footer": {
+        "copy": "&copy; 2023 My Awesome Website (NL)"
+    },
+    "languageNames": {
+        "en": "English",
+        "zh": "Chinese (Traditional)",
+        "es": "Español (Spanish)",
+        "it": "Italiano (Italian)",
+        "fr": "Français (French)",
+        "ja": "日本語 (Japanese)",
+        "ko": "한국어 (Korean)",
+        "pt": "Português (Portuguese)",
+        "de": "Deutsch (German)",
+        "id": "Bahasa Indonesia (Indonesian)",
+        "nl": "Nederlands"
+    }
+} 

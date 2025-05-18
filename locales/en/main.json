@@ -1,0 +1,75 @@
+{
+  "siteTitle": "Hedra AI - AI-Powered Video Creation Tool",
+  "meta": {
+    "description": "Hedra AI - AI-powered video creation tool to generate talking and singing character videos from text and images.",
+    "keywords": "AI video, video creation, character animation, Hedra AI, artificial intelligence video"
+  },
+  "nav": {
+    "brand": "Hedra AI",
+    "home": "Home",
+    "products": "Products",
+    "pricing": "Pricing",
+    "blog": "Blog",
+    "login": "Login",
+    "startUsing": "Get Started",
+    "languageSelectorAriaLabel": "Select language"
+  },
+  "hero": {
+    "title": "Create Talking, Singing Character Videos",
+    "brandNameUnderline": "Hedra AI",
+    "tagline": "AI-powered video editing tools",
+    "description": "Easily transform any text or audio into lifelike character animations using our cutting-edge AI technology, giving your content unique vitality.",
+    "ctaButton": "Try Hedra AI"
+  },
+  "features": {
+    "title": "Core Features",
+    "subtitle": "Discover how Hedra AI revolutionizes your video creation workflow.",
+    "card1Title": "Smart Story Generation",
+    "card1Desc": "Input your ideas, and AI will help you build engaging storylines and scripts.",
+    "card2Title": "Personalized Voice Customization",
+    "card2Desc": "Select or upload voice samples, and AI will generate natural speech with specific emotions and styles.",
+    "card3Title": "AI Smart Character Generation",
+    "card3Desc": "Create unique AI characters from text descriptions or images, supporting various styles and customization options.",
+    "card4Title": "Full Format Media Support",
+    "card4Desc": "Supports import and export of various mainstream audio and video formats, seamlessly integrating with your workflow.",
+    "card5Title": "Convenient Sharing Mechanism",
+    "card5Desc": "Share your creations to major social media platforms with one click, or generate links for easy sharing.",
+    "card6Title": "Text-to-Video Technology",
+    "card6Desc": "Directly convert your text scripts into complete videos with voice and character animation."
+  },
+  "howItWorks": {
+    "title": "How It Works?",
+    "subtitle": "Unleash your creativity in just a few simple steps.",
+    "step1Title": "Input Idea",
+    "step1Desc": "Provide your text script, audio file, or a simple description of your idea.",
+    "step2Title": "AI Processing & Customization",
+    "step2Desc": "Choose character style, voice type, and AI will automatically process and generate an initial preview.",
+    "step3Title": "Preview & Generate",
+    "step3Desc": "Adjust details, and once satisfied, generate the high-definition video.",
+    "step4Title": "Download & Share",
+    "step4Desc": "Download your work or share it directly with your audience."
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to your common questions here.",
+    "q1": "What languages does Hedra AI support?",
+    "a1": "Hedra AI currently primarily supports English and Chinese for text input and voice generation, with more languages under continuous development.",
+    "q2": "Can the generated videos be used for commercial purposes?",
+    "a2": "Yes, depending on your chosen subscription plan, generated videos can be used for personal and commercial purposes. Please consult our terms of service for details.",
+    "q3": "Do I need professional video editing knowledge to use it?",
+    "a3": "Not at all! Hedra AI is designed to enable users without any professional background to easily create high-quality AI videos.",
+    "q4": "How long does video generation take?",
+    "a4": "Generation time depends on the length and complexity of the video. Typically, a few-minute video can be completed in a few to ten minutes.",
+    "q5": "Can I upload my own character models?",
+    "a5": "We currently offer a rich preset character library and AI character generation features. Future versions plan to support user-uploaded custom models.",
+    "q6": "What payment methods are supported?",
+    "a6": "We support major credit card payments and some third-party payment platforms. Please refer to the subscription page for details.",
+    "q7": "Is there a free trial version?",
+    "a7": "Yes, we offer a free trial version where you can experience core features and generate short videos with watermarks.",
+    "q8": "How can I get help if I encounter problems?",
+    "a8": "You can find documentation in our help center or contact our customer service team directly. We are here to assist you."
+  },
+  "languageSelector": {
+    "selectLanguage": "Select Language"
+  }
+} 
